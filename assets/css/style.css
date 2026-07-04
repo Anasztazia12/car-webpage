@@ -165,7 +165,7 @@ section { padding: 88px 0; }
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  height: 84px;
+  height: 100px;
 }
 .logo {
   display: flex;
@@ -178,11 +178,12 @@ section { padding: 88px 0; }
   flex-shrink: 0;
 }
 .site-logo-img {
-  height: clamp(40px, 6vw + 24px, 64px);
+  height: clamp(56px, 8vw + 30px, 88px);
   width: auto;
-  border-radius: 10px;
+  border-radius: 8px;
   display: block;
   flex-shrink: 0;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .main-nav {
@@ -263,7 +264,7 @@ section { padding: 88px 0; }
 @media (max-width: 900px) {
   .main-nav {
     position: fixed;
-    inset: 84px 0 auto 0;
+    inset: 100px 0 auto 0;
     background: var(--c-white);
     flex-direction: column;
     align-items: stretch;
