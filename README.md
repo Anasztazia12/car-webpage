@@ -4,21 +4,29 @@
 
 Modern, bilingual (HU/EN) car dealership website. Plain HTML/CSS/JS, no build step - open `index.html` in a browser, or upload it to any static host.
 
-**Live site:** https://carnovox-motor.amethyst-nexalune.co.uk/
+**Live site:** [carnovox-motor.amethyst-nexalune.co.uk](https://carnovox-motor.amethyst-nexalune.co.uk/)
 
 ## Screenshots
 
-| Hero | Car details modal |
-|---|---|
-| ![Hero section](assets/images/Screenshot%202026-07-04%20233405.png) | ![Range Rover Sport details](assets/images/Screenshot%202026-07-04%20233445.png) |
+### Hero
 
-| Quick search & stats | Contact & map |
-|---|---|
-| ![Quick search and stats](assets/images/Screenshot%202026-07-04%20233507.png) | ![Contact section with embedded map](assets/images/Screenshot%202026-07-04%20233732.png) |
+![Hero section](assets/images/Screenshot%202026-07-04%20233405.png)
 
-| Testimonials |
-|---|
-| ![Testimonials](assets/images/Screenshot%202026-07-04%20233746.png) |
+### Car details modal
+
+![Range Rover Sport details](assets/images/Screenshot%202026-07-04%20233445.png)
+
+### Quick search & stats
+
+![Quick search and stats](assets/images/Screenshot%202026-07-04%20233507.png)
+
+### Contact & map
+
+![Contact section with embedded map](assets/images/Screenshot%202026-07-04%20233732.png)
+
+### Testimonials
+
+![Testimonials](assets/images/Screenshot%202026-07-04%20233746.png)
 
 ## Pages
 
@@ -30,11 +38,15 @@ Modern, bilingual (HU/EN) car dealership website. Plain HTML/CSS/JS, no build st
 
 The site simulates two independent dealership locations:
 
-| | Hungary (HU) | United Kingdom (EN) |
-|---|---|---|
-| Address | 1051 Budapest, Jozsef Attila utca 6. | 71-75 Shelton Street, London WC2H 9JQ |
-| Currency | Ft | GBP |
-| Inventory | BMW, Audi, VW, Mercedes, Toyota, Skoda, Opel | Range Rover, MINI, Jaguar, Ford, VW |
+**Hungary (HU)**
+- Address: 1051 Budapest, Jozsef Attila utca 6.
+- Currency: Ft
+- Inventory: BMW, Audi, VW, Mercedes, Toyota, Skoda, Opel
+
+**United Kingdom (EN)**
+- Address: 71-75 Shelton Street, London WC2H 9JQ
+- Currency: GBP
+- Inventory: Range Rover, MINI, Jaguar, Ford, VW
 
 The language switcher (top right, EN/HU) swaps the entire UI as well as the inventory shown - the brand list stays the same everywhere, but only the cars actually in stock at that location show up as results.
 
