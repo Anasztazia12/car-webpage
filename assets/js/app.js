@@ -130,12 +130,14 @@
       label_email_info: "E-mail",
       label_hours: "Nyitvatartás",
       hours_value: "H–P: 8:00–18:00 · Szo: 9:00–13:00",
-      contact_address: "1052 Budapest, Példa utca 12.",
+      contact_address: "1051 Budapest, József Attila utca 6.",
       contact_phone_display: "+36 30 123 4567",
       contact_phone_href: "tel:+36301234567",
       contact_email_display: "info@carnovoxmotor.hu",
       contact_email_href: "mailto:info@carnovoxmotor.hu",
-      map_city: "Budapest, Magyarország",
+      map_href: "https://www.bing.com/maps/search?mepi=57~~Embedded~LargeMapLink&ty=18&v=2&sV=1&qpvt=london,+United+Kingdom+71%E2%80%9375+Shelton+Street,+London+WC2H+9JQ,+United+Kingdom&FORM=MIRE&style=r&q=Budapest+Jozsef+Attila+utca+6&cp=47.498882~19.049433&lvl=16",
+      map_embed_src: "https://www.google.com/maps?q=47.498882,19.049433&z=16&output=embed",
+      map_open_label: "Megnyitás térképen",
       form_success_msg: "Köszönjük! Üzenetedet megkaptuk, hamarosan felvesszük veled a kapcsolatot.",
       label_name: "Teljes név *",
       ph_name: "Kovács János",
@@ -361,7 +363,9 @@
       contact_phone_href: "tel:+442079460958",
       contact_email_display: "international@carnovoxmotor.com",
       contact_email_href: "mailto:international@carnovoxmotor.com",
-      map_city: "London, United Kingdom",
+      map_href: "http://www.71-75.co.uk",
+      map_embed_src: "https://www.google.com/maps?q=71-75+Shelton+Street,+London+WC2H+9JQ,+United+Kingdom&z=16&output=embed",
+      map_open_label: "Open in Maps",
       form_success_msg: "Thank you! We've received your message and will get back to you shortly.",
       label_name: "Full name *",
       ph_name: "John Smith",
@@ -490,6 +494,9 @@
     });
     document.querySelectorAll("[data-i18n-href]").forEach((el) => {
       el.setAttribute("href", t(el.getAttribute("data-i18n-href")));
+    });
+    document.querySelectorAll("[data-i18n-src]").forEach((el) => {
+      el.setAttribute("src", t(el.getAttribute("data-i18n-src")));
     });
     document.querySelectorAll("[data-i18n-title]").forEach((el) => {
       document.title = t(el.getAttribute("data-i18n-title"));
