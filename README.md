@@ -6,6 +6,32 @@ Modern, bilingual (HU/EN) car dealership website. Plain HTML/CSS/JS, no build st
 
 **Live site:** [carnovox-motor.amethyst-nexalune.co.uk](https://carnovox-motor.amethyst-nexalune.co.uk/)
 
+## Design approach (five planes of UX)
+
+### Strategy
+
+Used-car buyers are wary by default - concealed faults, rolled-back odometers and pushy haggling are the reputation this site has to overcome. The strategy is to sell trust before it sells cars: lead with inspection/warranty guarantees, back every claim with specifics (120-point checklist, real mileage, transparent pricing), and give a UK-based buyer the same confidence as a Budapest-based one by treating the two markets as genuinely separate, real dealership locations rather than a single site with a language toggle bolted on.
+
+### Scope
+
+- Browse, filter (brand, body type, fuel, price) and sort a real inventory, per location
+- See full car detail (photo, price, engine, power, gearbox, drivetrain, description) without leaving the list
+- Contact the right office by phone, email, or form, with the correct address and map for that location
+- Read the company's story, values, and team to support the trust argument from Strategy
+- Full HU/EN bilingual coverage - not just UI strings, but inventory, staff names, and contact details per market
+
+### Structure
+
+Three pages share one navigation shell (`index.html`, `cars.html`, `about.html`) and one data source (`CARS_DATA` in `app.js`). The homepage's featured grid and the full inventory page both read from that same array, filtered by the active market - so there is exactly one place to add a car, not two. The quick-search form on the homepage hands off its filters to `cars.html` via query string, keeping the two pages in sync without any shared server state.
+
+### Skeleton
+
+Sticky header (logo, nav, language switch, phone, CTA) on every page; a filter toolbar sits directly above the results grid it controls; car cards use a consistent layout (photo, badge, spec icons, price, actions) whether they appear as "featured" or in the full list; clicking "Details" opens an in-place modal instead of navigating away, keeping the user's filtered results intact underneath.
+
+### Surface
+
+Dark navy and gold express "premium, trustworthy dealership" rather than "budget classifieds site"; Poppins for headings paired with Inter for body text; consistent line-style icons throughout; subtle motion (reveal-on-scroll, hover lift on cards, modal fade) signals polish without becoming a distraction.
+
 ## Screenshots
 
 ### Hero
