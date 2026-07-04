@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n-title="title_cars">Autóink | CarnovoX Motor</title>
+<meta name="description" id="metaDesc" data-i18n-content="desc_cars" content="Böngéssz ellenőrzött, garanciával értékesített használt autóink között.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c1220'/%3E%3Cpath d='M8 40h48M12 40l4-14a4 4 0 0 1 4-3h24a4 4 0 0 1 4 3l4 14' stroke='%23c9962c' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='18' cy='46' r='4' fill='%23c9962c'/%3E%3Ccircle cx='46' cy='46' r='4' fill='%23c9962c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/images/logo.png" alt="CarnovoX Motor" class="site-logo-img">
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link" data-i18n="nav_home">Főoldal</a>
+      <a href="cars.html" class="nav-link active" data-i18n="nav_cars">Autóink</a>
+      <a href="about.html" class="nav-link" data-i18n="nav_about">Rólunk</a>
+      <a href="index.html#contact" class="nav-link" data-i18n="nav_contact">Kapcsolat</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Nyelv / Language">
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="hu">HU</button>
+      </div>
+      <a href="tel:+36301234567" data-i18n-href="contact_phone_href" class="header-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2c-8 0-15-7-15-15a2 2 0 0 1 2-2Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="contact_phone_display">+36 30 123 4567</span>
+      </a>
+      <a href="index.html#contact" class="btn btn-primary" data-i18n="btn_get_quote_header">Ajánlatkérés</a>
+      <button class="nav-toggle" id="navToggle" data-i18n-aria="aria_menu_toggle" aria-label="Menü megnyitása" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-banner">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html" data-i18n="breadcrumb_home">Főoldal</a> / <span data-i18n="breadcrumb_cars">Autóink</span></div>
+      <h1 data-i18n="page_cars_title">Teljes autókínálatunk</h1>
+      <p data-i18n="page_cars_desc">Ellenőrzött, garanciával értékesített autók várják, hogy megtaláld a hozzád illőt. Szűrj márka, ár vagy üzemanyag szerint.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <form class="filter-toolbar" id="filterForm">
+      <div class="field-group">
+        <label for="fSearch" data-i18n="label_search">Keresés</label>
+        <input class="field-control" id="fSearch" type="text" data-i18n-placeholder="ph_search_example" placeholder="Pl. Passat, 320d...">
+      </div>
+      <div class="field-group">
+        <label for="fBrand" data-i18n="label_brand">Márka</label>
+        <select class="field-control" id="fBrand">
+          <option value="" data-i18n="opt_all_brands">Összes márka</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="fBody" data-i18n="label_body">Karosszéria</label>
+        <select class="field-control" id="fBody">
+          <option value="" data-i18n="opt_any_body">Bármilyen</option>
+          <option value="sedan" data-i18n="opt_body_sedan">Limuzin</option>
+          <option value="suv" data-i18n="opt_body_suv">SUV</option>
+          <option value="kombi" data-i18n="opt_body_kombi">Kombi</option>
+          <option value="hatchback" data-i18n="opt_body_hatchback">Ferdehátú</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="fFuel" data-i18n="label_fuel">Üzemanyag</label>
+        <select class="field-control" id="fFuel">
+          <option value="" data-i18n="opt_any_fuel">Bármilyen</option>
+          <option value="dizel" data-i18n="opt_fuel_diesel">Dízel</option>
+          <option value="benzin" data-i18n="opt_fuel_petrol">Benzin</option>
+          <option value="hibrid" data-i18n="opt_fuel_hybrid">Hibrid</option>
+          <option value="elektromos" data-i18n="opt_fuel_electric">Elektromos</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="fPrice" data-i18n="label_price">Ár</label>
+        <select class="field-control" id="fPrice">
+          <option value="" data-i18n="opt_any_price">Bármennyi</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-outline" id="fReset" data-i18n="btn_reset_filters">Szűrők törlése</button>
+    </form>
+
+    <div class="results-bar">
+      <div class="results-count"><strong id="resultsCount">0</strong> <span data-i18n="results_suffix">autó megjelenítve</span></div>
+      <div class="sort-inline">
+        <label for="fSort" data-i18n="label_sort">Rendezés:</label>
+        <select class="field-control" id="fSort" style="padding:9px 12px;">
+          <option value="newest" data-i18n="sort_newest">Legújabb</option>
+          <option value="price-asc" data-i18n="sort_price_asc">Ár szerint növekvő</option>
+          <option value="price-desc" data-i18n="sort_price_desc">Ár szerint csökkenő</option>
+          <option value="km-asc" data-i18n="sort_km_asc">Legkevesebb futott km</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="cars-grid" id="carsGrid"></div>
+
+    <div class="empty-state" id="emptyState">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>
+      <p><span data-i18n="empty_pre">Nincs a szűrésnek megfelelő autó. Próbálj más feltételeket, vagy </span><a href="index.html#contact" class="accent" data-i18n="empty_link">kérj személyre szabott ajánlatot</a>.</p>
+    </div>
+
+    <div class="load-more-wrap">
+      <button class="btn btn-dark" id="loadMoreBtn" data-i18n="load_more">Több autó betöltése</button>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div>
+          <h2 data-i18n="cta_cars_title">Nem találod, amit keresel?</h2>
+          <p data-i18n="cta_cars_desc">Mondd el, milyen autót keresel, és mi megkeressük neked a piacon.</p>
+        </div>
+        <div class="cta-banner-actions">
+          <a href="index.html#contact" class="btn btn-primary" data-i18n="cta_cars_btn">Egyedi keresés indítása</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="footer-brand-row">
+        <img src="assets/images/logo.png" alt="CarnovoX Motor" class="site-logo-img">
+      </div>
+      <p data-i18n="footer_about">Megbízható használt autók, átlátható folyamatokkal és garanciával.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_quicklinks">Gyorslinkek</h4>
+      <ul class="footer-links">
+        <li><a href="index.html" data-i18n="nav_home">Főoldal</a></li>
+        <li><a href="cars.html" data-i18n="nav_cars">Autóink</a></li>
+        <li><a href="about.html" data-i18n="nav_about">Rólunk</a></li>
+        <li><a href="index.html#contact" data-i18n="nav_contact">Kapcsolat</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_brands">Márkák</h4>
+      <ul class="footer-links js-footer-brands"></ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_contact">Elérhetőség</h4>
+      <ul class="footer-links">
+        <li data-i18n="contact_address">1052 Budapest, Példa utca 12.</li>
+        <li><a href="tel:+36301234567" data-i18n-href="contact_phone_href" data-i18n="contact_phone_display">+36 30 123 4567</a></li>
+        <li><a href="mailto:info@carnovoxmotor.hu" data-i18n-href="contact_email_href" data-i18n="contact_email_display">info@carnovoxmotor.hu</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span id="year"></span> CarnovoX Motor. <span data-i18n="footer_rights">Minden jog fenntartva.</span></span>
+    <span><a href="#" data-i18n="footer_privacy">Adatvédelem</a> · <a href="#" data-i18n="footer_terms">ÁSZF</a></span>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Vissza a tetejére">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n-title="title_home">CarnovoX Motor | Megbízható használt autók</title>
+<meta name="description" id="metaDesc" data-i18n-content="desc_home" content="CarnovoX Motor – ellenőrzött, garanciával értékesített használt autók.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c1220'/%3E%3Cpath d='M8 40h48M12 40l4-14a4 4 0 0 1 4-3h24a4 4 0 0 1 4 3l4 14' stroke='%23c9962c' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='18' cy='46' r='4' fill='%23c9962c'/%3E%3Ccircle cx='46' cy='46' r='4' fill='%23c9962c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/images/logo.png" alt="CarnovoX Motor" class="site-logo-img">
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link active" data-i18n="nav_home">Főoldal</a>
+      <a href="cars.html" class="nav-link" data-i18n="nav_cars">Autóink</a>
+      <a href="about.html" class="nav-link" data-i18n="nav_about">Rólunk</a>
+      <a href="index.html#contact" class="nav-link" data-i18n="nav_contact">Kapcsolat</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Nyelv / Language">
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="hu">HU</button>
+      </div>
+      <a href="tel:+36301234567" data-i18n-href="contact_phone_href" class="header-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2c-8 0-15-7-15-15a2 2 0 0 1 2-2Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="contact_phone_display">+36 30 123 4567</span>
+      </a>
+      <a href="cars.html" class="btn btn-primary" data-i18n="btn_browse_header">Autók böngészése</a>
+      <button class="nav-toggle" id="navToggle" data-i18n-aria="aria_menu_toggle" aria-label="Menü megnyitása" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-eyebrow" data-i18n="hero_eyebrow">★ 4.9/5 vevői elégedettség · 1500+ eladott autó</span>
+        <h1><span data-i18n="hero_title_1">Találd meg álmaid autóját — </span><span class="accent" data-i18n="hero_title_accent">garanciával</span><span data-i18n="hero_title_2">, átláthatóan</span></h1>
+        <p class="lead" data-i18n="hero_lead">Minden autónk átesik egy 120 pontos műszaki és eredetiségvizsgálaton, mielőtt felkerül a kínálatunkba. Nálunk nincsenek rejtett hibák, csak megbízható autók.</p>
+        <div class="hero-cta">
+          <a href="cars.html" class="btn btn-primary" data-i18n="hero_cta_browse">Böngéssz az autóink között</a>
+          <a href="index.html#contact" class="btn btn-outline-light" data-i18n="hero_cta_quote">Ajánlatkérés</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-i18n="hero_trust_1">12 hónap garancia</span>
+          </div>
+          <div class="hero-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-i18n="hero_trust_2">Ellenőrzött futásteljesítmény</span>
+          </div>
+          <div class="hero-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-i18n="hero_trust_3">Finanszírozás 24 órán belül</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/images/hero.jpg" data-i18n-alt="hero_visual_alt" alt="Kiemelt autó" loading="lazy" onerror="this.remove()">
+        <div class="hero-visual-badge">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e0b45a" stroke-width="2"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5Z" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <strong data-i18n="hero_badge_title">Ellenőrzött minőség</strong>
+            <span data-i18n="hero_badge_sub">120 pontos átvizsgálás minden autón</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK SEARCH -->
+  <div class="container quick-search">
+    <form class="quick-search-card" action="cars.html" method="get">
+      <div class="field-group">
+        <label for="qMarka" data-i18n="label_brand">Márka</label>
+        <select class="field-control" id="qMarka" name="brand">
+          <option value="" data-i18n="opt_all_brands">Összes márka</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="qTest" data-i18n="label_body">Karosszéria</label>
+        <select class="field-control" id="qTest" name="body">
+          <option value="" data-i18n="opt_any_body">Bármilyen</option>
+          <option value="sedan" data-i18n="opt_body_sedan">Limuzin</option>
+          <option value="suv" data-i18n="opt_body_suv">SUV</option>
+          <option value="kombi" data-i18n="opt_body_kombi">Kombi</option>
+          <option value="hatchback" data-i18n="opt_body_hatchback">Ferdehátú</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="qAr" data-i18n="label_price">Ár</label>
+        <select class="field-control" id="qAr" name="price">
+          <option value="" data-i18n="opt_any_price">Bármennyi</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="qKulcsszo" data-i18n="label_search">Keresés</label>
+        <input class="field-control" id="qKulcsszo" name="q" type="text" data-i18n-placeholder="ph_search_example" placeholder="Pl. Passat, 320d...">
+      </div>
+      <button type="submit" class="btn btn-dark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>
+        <span data-i18n="btn_search">Keresés</span>
+      </button>
+    </form>
+  </div>
+
+  <!-- STATS -->
+  <section class="stats-strip">
+    <div class="container stats-grid">
+      <div class="reveal"><div class="stat-num">12<span class="accent">+</span></div><div class="stat-label" data-i18n="stat_experience">év tapasztalat</div></div>
+      <div class="reveal"><div class="stat-num">1500<span class="accent">+</span></div><div class="stat-label" data-i18n="stat_sold">eladott autó</div></div>
+      <div class="reveal"><div class="stat-num">98<span class="accent">%</span></div><div class="stat-label" data-i18n="stat_satisfaction">elégedett ügyfél</div></div>
+      <div class="reveal"><div class="stat-num">120<span class="accent">pt</span></div><div class="stat-label" data-i18n="stat_inspection">műszaki átvizsgálás</div></div>
+    </div>
+  </section>
+
+  <!-- FEATURED CARS -->
+  <section>
+    <div class="container">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+        <span class="section-tag" data-i18n="tag_featured">Kiemelt ajánlatok</span>
+        <h2 data-i18n="heading_featured">Népszerű autóink</h2>
+        <p data-i18n="desc_featured">Kézzel válogatott, ellenőrzött állapotú autók — a teljes kínálatunkat az Autóink oldalon találod.</p>
+      </div>
+
+      <div class="cars-grid" id="featuredGrid"></div>
+
+      <div class="section-foot">
+        <a href="cars.html" class="btn btn-dark" data-i18n="btn_view_all_cars">Összes autó megtekintése</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="bg-alt">
+    <div class="container">
+      <div class="section-head center">
+        <span class="section-tag" data-i18n="tag_why">Miért mi?</span>
+        <h2 data-i18n="heading_why">Amiért ügyfeleink minket választanak</h2>
+        <p data-i18n="desc_why">Nem csak autót adunk el — nyugalmat és biztonságot is a vásárlás mellé.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5Z" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 data-i18n="feature1_title">Ellenőrzött autók</h3>
+          <p data-i18n="feature1_desc">Minden jármű 120 pontos műszaki és eredetiségvizsgálaton esik át, mielőtt kínálatunkba kerül.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10" stroke-linecap="round"/></svg></div>
+          <h3 data-i18n="feature2_title">Átlátható árazás</h3>
+          <p data-i18n="feature2_desc">Nincsenek rejtett költségek — a hirdetett ár a végső ár, a teljes szervizkönyvet megmutatjuk.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18" /></svg></div>
+          <h3 data-i18n="feature3_title">Rugalmas finanszírozás</h3>
+          <p data-i18n="feature3_desc">Banki partnereinkkel személyre szabott hitel- és lízingkonstrukciókat kínálunk, gyors elbírálással.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke-linejoin="round"/></svg></div>
+          <h3 data-i18n="feature4_title">Garancia & ügyfélszolgálat</h3>
+          <p data-i18n="feature4_desc">Minden autónkra garanciát vállalunk, vásárlás után is elérhető szakértői ügyfélszolgálattal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="container">
+      <div class="section-head center">
+        <span class="section-tag" data-i18n="tag_process">Folyamat</span>
+        <h2 data-i18n="heading_process">Így megy nálunk az autóvásárlás</h2>
+        <p data-i18n="desc_process">Négy egyszerű lépésben, felesleges bürokrácia nélkül.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-num">1</div>
+          <h3 data-i18n="step1_title">Böngéssz a kínálatban</h3>
+          <p data-i18n="step1_desc">Szűrj márka, ár vagy típus szerint, és találd meg a hozzád illő autót.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">2</div>
+          <h3 data-i18n="step2_title">Foglalj bemutatót</h3>
+          <p data-i18n="step2_desc">Egyeztess velünk egy időpontot személyes megtekintésre és próbaútra.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">3</div>
+          <h3 data-i18n="step3_title">Teszteld le nyugodtan</h3>
+          <p data-i18n="step3_desc">Próbáld ki az autót, tekintsd át a szervizkönyvet és a vizsgálati jegyzőkönyvet.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">4</div>
+          <h3 data-i18n="step4_title">Vidd haza</h3>
+          <p data-i18n="step4_desc">Intézzük az ügyintézést és a finanszírozást, te csak az új autódra figyelj.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="bg-alt">
+    <div class="container">
+      <div class="section-head center">
+        <span class="section-tag" data-i18n="tag_testimonials">Vélemények</span>
+        <h2 data-i18n="heading_testimonials">Amit ügyfeleink mondanak</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal">
+          <div class="stars">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 6.2 6.4.5-4.9 4.3 1.5 6.4L10 15.5 4.4 18.4l1.5-6.4L1 7.7l6.4-.5z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 6.2 6.4.5-4.9 4.3 1.5 6.4L10 15.5 4.4 18.4l1.5-6.4L1 7.7l6.4-.5z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 6.2 6.4.5-4.9 4.3 1.5 6.4L10 15.5 4.4 18.4l1.5-6.4L1 7.7l6.4-.5z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 6.2 6.4.5-4.9 4.3 1.5 6.4L10 15.5 4.4 18.4l1.5-6.4L1 7.7l6.4-.5z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 6.2 6.4.5-4.9 4.3 1.5 6.4L10 15.5 4.4 18.4l1.5-6.4L1 7.7l6.4-.5z"/></svg>
+          </div>
+          <p class="quote" data-i18n="testimonial1_quote">"Végre egy autókereskedő, aki tényleg mindent elmondott az autóról."</p>
+          <div class="testimonial-person">
+            <div class="testimonial-avatar">K.T.</div>
+            <div><strong>Kovács Tamás</strong><span data-i18n="testimonial1_role">BMW 320d tulajdonos</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="stars">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 6.2 6.4.5-4.9 4.3 1.5 6.4L10 15.5 4.4 18.4l1.5-6.4L1 7.7l6.4-.5z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 6.2 6.4.5-4.9 4.3 1.5 6.4L10 15.5 4.4 18.4l1.5-6.4L1 7.7l6.4-.5z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 6.2 6.4.5-4.9 4.3 1.5 6.4L10 15.5 4.4 18.4l1.5-6.4L1 7.7l6.4-.5z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 6.2 6.4.5-4.9 4.3 1.5 6.4L10 15.5 4.4 18.4l1.5-6.4L1 7.7l6.4-.5z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 6.2 6.4.5-4.9 4.3 1.5 6.4L10 15.5 4.4 18.4l1.5-6.4L1 7.7l6.4-.5z"/></svg>
+          </div>
+          <p class="quote" data-i18n="testimonial2_quote">"A finanszírozást egy nap alatt elintézték."</p>
+          <div class="testimonial-person">
+            <div class="testimonial-avatar">N.E.</div>
+            <div><strong>Nagy Eszter</strong><span data-i18n="testimonial2_role">Audi A4 tulajdonos</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="stars">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 6.2 6.4.5-4.9 4.3 1.5 6.4L10 15.5 4.4 18.4l1.5-6.4L1 7.7l6.4-.5z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 6.2 6.4.5-4.9 4.3 1.5 6.4L10 15.5 4.4 18.4l1.5-6.4L1 7.7l6.4-.5z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 6.2 6.4.5-4.9 4.3 1.5 6.4L10 15.5 4.4 18.4l1.5-6.4L1 7.7l6.4-.5z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 6.2 6.4.5-4.9 4.3 1.5 6.4L10 15.5 4.4 18.4l1.5-6.4L1 7.7l6.4-.5z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 6.2 6.4.5-4.9 4.3 1.5 6.4L10 15.5 4.4 18.4l1.5-6.4L1 7.7l6.4-.5z"/></svg>
+          </div>
+          <p class="quote" data-i18n="testimonial3_quote">"Vásárlás után fél évvel egy apró hibát a garancia keretében ingyen javítottak."</p>
+          <div class="testimonial-person">
+            <div class="testimonial-avatar">SZ.P.</div>
+            <div><strong>Szabó Péter</strong><span data-i18n="testimonial3_role">Škoda Superb tulajdonos</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section>
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div>
+          <h2 data-i18n="cta_home_title">Készen állsz a következő autódra?</h2>
+          <p data-i18n="cta_home_desc">Foglalj személyes bemutatót, vagy kérj ingyenes ajánlatot még ma.</p>
+        </div>
+        <div class="cta-banner-actions">
+          <a href="cars.html" class="btn btn-primary" data-i18n="btn_browse_header">Autók böngészése</a>
+          <a href="index.html#contact" class="btn btn-outline-light" data-i18n="cta_home_btn2">Kapcsolatfelvétel</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="bg-alt" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag" data-i18n="tag_contact">Kapcsolat</span>
+        <h2 data-i18n="heading_contact">Lépj velünk kapcsolatba</h2>
+        <p data-i18n="desc_contact">Kérdésed van egy autóval kapcsolatban, vagy szeretnél időpontot foglalni? Írj nekünk, hamarosan válaszolunk.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info-card reveal">
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0Z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong data-i18n="label_location">Telephely</strong><span data-i18n="contact_address">1052 Budapest, Példa utca 12.</span></div>
+          </div>
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2c-8 0-15-7-15-15a2 2 0 0 1 2-2Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><strong data-i18n="label_phone_info">Telefon</strong><span><a href="tel:+36301234567" data-i18n-href="contact_phone_href" data-i18n="contact_phone_display">+36 30 123 4567</a></span></div>
+          </div>
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><strong data-i18n="label_email_info">E-mail</strong><span><a href="mailto:info@carnovoxmotor.hu" data-i18n-href="contact_email_href" data-i18n="contact_email_display">info@carnovoxmotor.hu</a></span></div>
+          </div>
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke-linecap="round"/></svg>
+            <div><strong data-i18n="label_hours">Nyitvatartás</strong><span data-i18n="hours_value">H–P: 8:00–18:00 · Szo: 9:00–13:00</span></div>
+          </div>
+
+          <div class="map-placeholder">
+            <div class="map-pin-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0Z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <strong data-i18n="map_city">Budapest, Magyarország</strong>
+            <span data-i18n="contact_address">1052 Budapest, Példa utca 12.</span>
+          </div>
+
+          <div class="social-row">
+            <a href="#" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H17V3.7c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.95 1.43-3.95 4.06V10H8v3.1h2.68V21h2.82Z"/></svg></a>
+            <a href="#" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+            <a href="#" class="social-btn" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="m10 9.5 5 2.5-5 2.5Z" fill="currentColor" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+
+        <div class="form-card reveal">
+          <div class="form-success" id="formSuccess">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-i18n="form_success_msg">Köszönjük! Üzenetedet megkaptuk, hamarosan felvesszük veled a kapcsolatot.</span>
+          </div>
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="field-group">
+                <label for="cName" data-i18n="label_name">Teljes név *</label>
+                <input class="field-control" id="cName" name="name" type="text" required data-i18n-placeholder="ph_name" placeholder="Kovács János">
+              </div>
+              <div class="field-group">
+                <label for="cPhone" data-i18n="label_phone_field">Telefonszám *</label>
+                <input class="field-control" id="cPhone" name="phone" type="tel" required placeholder="+36 30 000 0000">
+              </div>
+            </div>
+            <div class="form-row" style="margin-top:16px;">
+              <div class="field-group">
+                <label for="cEmail" data-i18n="label_email_field">E-mail cím *</label>
+                <input class="field-control" id="cEmail" name="email" type="email" required data-i18n-placeholder="ph_email" placeholder="nev@email.hu">
+              </div>
+              <div class="field-group">
+                <label for="cCar" data-i18n="label_topic">Érdeklődés tárgya</label>
+                <select class="field-control" id="cCar" name="topic">
+                  <option value="vetel" data-i18n="topic_buy">Autóvásárlás</option>
+                  <option value="finanszirozas" data-i18n="topic_financing">Finanszírozás</option>
+                  <option value="bemutato" data-i18n="topic_viewing">Bemutató időpont</option>
+                  <option value="egyeb" data-i18n="topic_other">Egyéb kérdés</option>
+                </select>
+              </div>
+            </div>
+            <div class="field-group" style="margin-top:16px;">
+              <label for="cMsg" data-i18n="label_message">Üzenet *</label>
+              <textarea class="field-control" id="cMsg" name="message" rows="4" required data-i18n-placeholder="ph_message" placeholder="Írd le, miben segíthetünk..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" style="margin-top:18px;" data-i18n="btn_send">Üzenet küldése</button>
+            <p class="form-note" data-i18n="form_note">A küldéssel elfogadod adatvédelmi tájékoztatónkat. Munkatársaink általában 1 munkanapon belül válaszolnak.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="footer-brand-row">
+        <img src="assets/images/logo.png" alt="CarnovoX Motor" class="site-logo-img">
+      </div>
+      <p data-i18n="footer_about">Megbízható használt autók, átlátható folyamatokkal és garanciával.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_quicklinks">Gyorslinkek</h4>
+      <ul class="footer-links">
+        <li><a href="index.html" data-i18n="nav_home">Főoldal</a></li>
+        <li><a href="cars.html" data-i18n="nav_cars">Autóink</a></li>
+        <li><a href="about.html" data-i18n="nav_about">Rólunk</a></li>
+        <li><a href="index.html#contact" data-i18n="nav_contact">Kapcsolat</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_brands">Márkák</h4>
+      <ul class="footer-links js-footer-brands"></ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_contact">Elérhetőség</h4>
+      <ul class="footer-links">
+        <li data-i18n="contact_address">1052 Budapest, Példa utca 12.</li>
+        <li><a href="tel:+36301234567" data-i18n-href="contact_phone_href" data-i18n="contact_phone_display">+36 30 123 4567</a></li>
+        <li><a href="mailto:info@carnovoxmotor.hu" data-i18n-href="contact_email_href" data-i18n="contact_email_display">info@carnovoxmotor.hu</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span id="year"></span> CarnovoX Motor. <span data-i18n="footer_rights">Minden jog fenntartva.</span></span>
+    <span><a href="#" data-i18n="footer_privacy">Adatvédelem</a> · <a href="#" data-i18n="footer_terms">ÁSZF</a></span>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Vissza a tetejére">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
