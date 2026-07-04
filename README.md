@@ -6,6 +6,20 @@ Modern, bilingual (HU/EN) car dealership website. Plain HTML/CSS/JS, no build st
 
 **Live site:** https://carnovox-motor.amethyst-nexalune.co.uk/
 
+## Screenshots
+
+| Hero | Car details modal |
+|---|---|
+| ![Hero section](assets/images/Screenshot%202026-07-04%20233405.png) | ![Range Rover Sport details](assets/images/Screenshot%202026-07-04%20233445.png) |
+
+| Quick search & stats | Contact & map |
+|---|---|
+| ![Quick search and stats](assets/images/Screenshot%202026-07-04%20233507.png) | ![Contact section with embedded map](assets/images/Screenshot%202026-07-04%20233732.png) |
+
+| Testimonials |
+|---|
+| ![Testimonials](assets/images/Screenshot%202026-07-04%20233746.png) |
+
 ## Pages
 
 - `index.html` - Home page (hero, quick search, featured cars, why us, process, testimonials, contact + map)
