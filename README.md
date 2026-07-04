@@ -38,12 +38,14 @@ Modern, bilingual (HU/EN) car dealership website. Plain HTML/CSS/JS, no build st
 
 The site simulates two independent dealership locations:
 
-**Hungary (HU)**
+### Hungary (HU)
+
 - Address: 1051 Budapest, Jozsef Attila utca 6.
 - Currency: Ft
 - Inventory: BMW, Audi, VW, Mercedes, Toyota, Skoda, Opel
 
-**United Kingdom (EN)**
+### United Kingdom (EN)
+
 - Address: 71-75 Shelton Street, London WC2H 9JQ
 - Currency: GBP
 - Inventory: Range Rover, MINI, Jaguar, Ford, VW
@@ -77,7 +79,7 @@ Every piece of UI text lives in the `I18N` dictionary at the top of `app.js`, un
 
 ## Folder structure
 
-```
+```text
 index.html, cars.html, about.html   - pages
 assets/css/style.css                - design system + every component's styling
 assets/js/app.js                    - i18n, car data, filtering, modal, form, animations
