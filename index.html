@@ -26,8 +26,14 @@
     </nav>
     <div class="header-actions">
       <div class="store-switch" role="group" data-i18n-aria="store_switch_aria" aria-label="Telephely választása">
-        <button type="button" class="store-btn" data-store="hu" data-i18n-aria="store_hu_label" aria-label="Magyarország">🇭🇺</button>
-        <button type="button" class="store-btn" data-store="uk" data-i18n-aria="store_uk_label" aria-label="United Kingdom">🇬🇧</button>
+        <button type="button" class="store-btn" data-store="hu" data-i18n-aria="store_hu_label" aria-label="Magyarország">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0Z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg>
+          Budapest
+        </button>
+        <button type="button" class="store-btn" data-store="uk" data-i18n-aria="store_uk_label" aria-label="United Kingdom">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0Z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg>
+          London
+        </button>
       </div>
       <div class="lang-switch" role="group" aria-label="Nyelv / Language">
         <button type="button" class="lang-btn" data-lang="en">EN</button>
@@ -51,10 +57,15 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
+        <a href="#featured" class="hero-uk-banner" data-switch-store="uk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0Z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-i18n="hero_uk_announcement">Már Angliában is jelen vagyunk!</span>
+        </a>
         <span class="hero-eyebrow" data-i18n="hero_eyebrow">★ 4.9/5 vevői elégedettség · 1500+ eladott autó</span>
         <h1><span data-i18n="hero_title_1">Találd meg álmaid autóját — </span><span class="accent" data-i18n="hero_title_accent">garanciával</span><span data-i18n="hero_title_2">, átláthatóan</span></h1>
         <p class="lead" data-i18n="hero_lead">Minden autónk átesik egy 120 pontos műszaki és eredetiségvizsgálaton, mielőtt felkerül a kínálatunkba. Nálunk nincsenek rejtett hibák, csak megbízható autók.</p>
-        <div class="hero-cta">
+        <p class="hero-sub" data-i18n="hero_sub">Két telephelyünk van: Magyarországon és az Egyesült Királyságban is megtalálsz minket — válaszd ki a hozzád közelebbi telephelyet.</p>
+        <div class="hero-cta"><br>
           <a href="cars.html" class="btn btn-primary" data-i18n="hero_cta_browse">Böngéssz az autóink között</a>
           <a href="index.html#contact" class="btn btn-outline-light" data-i18n="hero_cta_quote">Ajánlatkérés</a>
         </div>
@@ -133,7 +144,7 @@
   </section>
 
   <!-- FEATURED CARS -->
-  <section>
+  <section id="featured">
     <div class="container">
       <div class="section-head center" style="margin-left:auto;margin-right:auto;">
         <span class="section-tag" data-i18n="tag_featured">Kiemelt ajánlatok</span>

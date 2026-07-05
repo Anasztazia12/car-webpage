@@ -28,6 +28,8 @@
       hero_title_accent: "garanciával",
       hero_title_2: ", átláthatóan",
       hero_lead: "Minden autónk átesik egy 120 pontos műszaki és eredetiségvizsgálaton, mielőtt felkerül a kínálatunkba. Nálunk nincsenek rejtett hibák, csak megbízható autók.",
+      hero_sub: "Két telephelyünk van: Magyarországon és az Egyesült Királyságban is megtalálsz minket — válaszd ki a hozzád közelebbi telephelyet.",
+      hero_uk_announcement: "Már Angliában is jelen vagyunk!",
       hero_cta_browse: "Böngéssz az autóink között",
       hero_cta_quote: "Ajánlatkérés",
       hero_trust_1: "12 hónap garancia",
@@ -253,6 +255,8 @@
       hero_title_accent: "with warranty",
       hero_title_2: ", transparently",
       hero_lead: "Every car we sell passes a 120-point technical and history inspection before it joins our inventory. No hidden defects — just cars you can trust.",
+      hero_sub: "We have two locations: one in Hungary and one in the United Kingdom — choose the closest to you.",
+      hero_uk_announcement: "We're now also present in the UK!",
       hero_cta_browse: "Browse our cars",
       hero_cta_quote: "Get a quote",
       hero_trust_1: "12-month warranty",
@@ -501,7 +505,7 @@
 
   function applyStoreData() {
     const data = STORE_DATA[currentStore];
-    document.querySelectorAll("[data-store]").forEach((el) => {
+    document.querySelectorAll("[data-store]:not(.store-btn)").forEach((el) => {
       el.textContent = data[el.getAttribute("data-store")];
     });
     document.querySelectorAll("[data-store-href]").forEach((el) => {
@@ -525,6 +529,10 @@
 
   document.querySelectorAll(".store-btn").forEach((btn) => {
     btn.addEventListener("click", () => setStore(btn.getAttribute("data-store")));
+  });
+
+  document.querySelectorAll("[data-switch-store]").forEach((el) => {
+    el.addEventListener("click", () => setStore(el.getAttribute("data-switch-store")));
   });
 
   function applyTranslations() {
@@ -617,17 +625,19 @@
       power: "110 LE", engineDesc: "1.5 dízel", drivetrain: "Elsőkerék-hajtás", description: "Gazdaságos és karbantartható ferdehátú, tökéletes első autónak." },
     { id: 10, market: "hu", brand: "volkswagen", model: "Volkswagen ID.4", img: "vw-id4.jpg", year: 2023, km: 21000, price: 15490000, installment: 159900, fuel: "elektromos", transmission: "automatic", body: "suv", badge: "new", featured: false,
       power: "204 LE", engineDesc: "Elektromos motor, 77 kWh akkumulátor", drivetrain: "Hátsókerék-hajtás", description: "Teljesen elektromos SUV, akár 500 km hatótávval egy töltéssel." },
-    { id: 16, market: "hu", brand: "audi", model: "Audi Q8", img: "audi.png", year: 2022, km: 32000, price: 24990000, installment: 258900, fuel: "dizel", transmission: "automatic", body: "suv", badge: "new", featured: true,
+    { id: 16, market: "hu", brand: "audi", model: "Audi Q8", img: "audi.png", hasPhoto: true, year: 2022, km: 32000, price: 24990000, installment: 258900, fuel: "dizel", transmission: "automatic", body: "suv", badge: "new", featured: true,
       power: "286–340 LE", engineDesc: "3.0 V6 TFSI (benzin) / 3.0 V6 TDI (dízel)", drivetrain: "8 fokozatú automata, quattro összkerékhajtás", description: "Prémium SUV sportos kupévonalvezetéssel. Digitális cockpit, két érintőkijelző és bőr sportülések az utastérben, Matrix LED fényszórók, 20–22 colos többküllős felnik és opcionális adaptív légrugózás kívül. Biztonsági csomag: sávtartó asszisztens, holttérfigyelő, 360°-os kamera és adaptív tempomat." },
+    { id: 17, market: "hu", brand: "ford", model: "Ford Focus", img: "ford.png", img2: "ford1.png", hasPhoto: true, year: 2018, km: 79000, price: 4790000, installment: 49900, fuel: "benzin", transmission: "manual", body: "hatchback", badge: "certified", featured: false,
+     power: "125 LE", engineDesc: "1.0 EcoBoost (benzin) / 1.6 TDCi (dízel)", drivetrain: "Elsőkerék-hajtás", description: "Metálkék, tiszta és karbantartott ferdehátú, szögletes LED-es fényszórókkal és ezüst többküllős alufelnikkel. Hivatalos Ford márkakereskedésből, „Ford Approved” tanúsítvánnyal, világos bemutatótermi padlóval a háttérben. Első tulajdonostól, teljes szervizkönyvvel." },
 
-    { id: 11, market: "uk", brand: "range-rover", model: "Range Rover Sport D350", img: "range-rover.jpeg", year: 2023, km: 14000, price: 54995, installment: 549, fuel: "dizel", transmission: "automatic", body: "suv", badge: "new", featured: true,
+    { id: 11, market: "uk", brand: "range-rover", model: "Range Rover Sport D350", img: "range-rover.jpeg", hasPhoto: true, year: 2023, km: 14000, price: 54995, installment: 549, fuel: "dizel", transmission: "automatic", body: "suv", badge: "new", featured: true,
       power: "350 hp", engineDesc: "3.0-litre mild-hybrid diesel inline-six", drivetrain: "Permanent all-wheel drive", description: "Third-generation Range Rover Sport styling with minimalist black-and-silver detailing, slimline LED lighting and flush door handles. Available with 3.0-litre mild-hybrid diesel or petrol engines, or as a P440e/P510e plug-in hybrid, spanning 250–510 hp — paired with an 8-speed automatic gearbox and permanent all-wheel drive." },
     { id: 12, market: "uk", brand: "mini", model: "MINI Cooper S", img: "mini-cooper-s.jpg", year: 2022, km: 22000, price: 18995, installment: 189, fuel: "benzin", transmission: "manual", body: "hatchback", badge: "new", featured: true,
       power: "178 hp", engineDesc: "2.0-litre turbocharged petrol", drivetrain: "Front-wheel drive", description: "Iconic go-kart handling in a stylish, efficient hatchback — perfect for spirited city driving." },
     { id: 13, market: "uk", brand: "jaguar", model: "Jaguar XE", img: "jaguar-xe.jpg", year: 2021, km: 38000, price: 16495, installment: 164, fuel: "dizel", transmission: "automatic", body: "sedan", badge: "certified", featured: true,
       power: "163 hp", engineDesc: "2.0-litre diesel", drivetrain: "Rear-wheel drive", description: "Sharp-handling executive saloon with a premium cabin and distinctive British design language." },
-    { id: 14, market: "uk", brand: "ford", model: "Ford Focus", img: "ford-focus.jpg", year: 2019, km: 54000, price: 11995, installment: 119, fuel: "benzin", transmission: "manual", body: "hatchback", badge: "sale", featured: false,
-      power: "125 hp", engineDesc: "1.0-litre EcoBoost petrol", drivetrain: "Front-wheel drive", description: "Practical, efficient hatchback with sharp handling and low running costs." },
+    { id: 14, market: "uk", brand: "ford", model: "Ford Focus", img: "Ford-grey.png", hasPhoto: true, year: 2019, km: 54000, price: 11995, installment: 119, fuel: "benzin", transmission: "manual", body: "hatchback", badge: "sale", featured: false,
+      power: "125 hp", engineDesc: "1.0-litre EcoBoost petrol", drivetrain: "Front-wheel drive", description: "Metallic grey hatchback with multi-spoke alloy wheels, tinted windows, a rear spoiler and rear wiper. Clean, well-maintained showroom example from our CarnovoX Motor dealership floor." },
     { id: 15, market: "uk", brand: "volkswagen", model: "Volkswagen Golf", img: "vw-golf.jpg", year: 2021, km: 29000, price: 15995, installment: 159, fuel: "benzin", transmission: "manual", body: "hatchback", badge: null, featured: false,
       power: "130 hp", engineDesc: "1.5-litre TSI petrol", drivetrain: "Front-wheel drive", description: "The benchmark hatchback — refined, spacious and packed with technology." }
   ];
@@ -696,7 +706,10 @@
       ? `<span class="car-photo-badge${car.badge !== "certified" ? " alt" : ""}">${t("badge_" + car.badge)}</span>`
       : "";
 
-    photoEl.innerHTML = `${badgeHtml}<img src="assets/images/${car.img}" alt="${car.model}" onerror="this.remove()">`;
+    const thumbHtml = car.img2
+      ? `<img class="car-modal-photo-thumb" src="assets/images/${car.img2}" alt="${car.model}" onerror="this.remove()">`
+      : "";
+    photoEl.innerHTML = `${badgeHtml}<img src="assets/images/${car.img}" alt="${car.model}" onerror="this.remove()">${thumbHtml}`;
     bodyEl.innerHTML = `
       <h3>${car.model}</h3>
       <span class="car-year">${car.year} · ${formatNum(car.km)} km</span>
@@ -736,7 +749,11 @@
   function renderFeatured() {
     const grid = document.getElementById("featuredGrid");
     if (!grid) return;
-    grid.innerHTML = CARS_DATA.filter((c) => c.featured && c.market === currentMarket()).map(carCardHtml).join("");
+    grid.innerHTML = CARS_DATA
+      .filter((c) => c.featured && c.market === currentMarket())
+      .sort((a, b) => (b.hasPhoto ? 1 : 0) - (a.hasPhoto ? 1 : 0))
+      .map(carCardHtml)
+      .join("");
   }
 
   /* ---------------- Market-aware brand / price selects & footer links ---------------- */
@@ -827,11 +844,12 @@
         return true;
       });
 
+      const withPhotoFirst = (cmp) => (a, b) => (b.hasPhoto ? 1 : 0) - (a.hasPhoto ? 1 : 0) || cmp(a, b);
       switch (els.sort.value) {
-        case "price-asc": list.sort((a, b) => a.price - b.price); break;
-        case "price-desc": list.sort((a, b) => b.price - a.price); break;
-        case "km-asc": list.sort((a, b) => a.km - b.km); break;
-        default: list.sort((a, b) => b.year - a.year || b.id - a.id);
+        case "price-asc": list.sort(withPhotoFirst((a, b) => a.price - b.price)); break;
+        case "price-desc": list.sort(withPhotoFirst((a, b) => b.price - a.price)); break;
+        case "km-asc": list.sort(withPhotoFirst((a, b) => a.km - b.km)); break;
+        default: list.sort(withPhotoFirst((a, b) => b.year - a.year || b.id - a.id));
       }
       return list;
     }

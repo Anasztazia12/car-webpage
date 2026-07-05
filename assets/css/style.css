@@ -247,16 +247,20 @@ section { padding: 60px 0; }
   flex-shrink: 0;
 }
 .store-btn {
-  padding: 5px 9px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
   border-radius: 999px;
-  font-size: 1rem;
-  line-height: 1;
-  opacity: 0.45;
-  filter: grayscale(1);
-  transition: background var(--transition), opacity var(--transition), filter var(--transition);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--c-text-muted);
+  transition: background var(--transition), color var(--transition);
 }
-.store-btn.active { background: var(--c-bg-alt); opacity: 1; filter: grayscale(0); }
-.store-btn:not(.active):hover { opacity: 0.8; }
+.store-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+.store-btn.active { background: var(--c-dark); color: var(--c-white); }
+.store-btn:not(.active):hover { background: var(--c-bg-alt); color: var(--c-text); }
 
 .nav-toggle {
   display: none;
@@ -285,6 +289,7 @@ section { padding: 60px 0; }
   .header-actions { gap: 10px; }
   .header-actions .btn-primary { display: none; }
   .lang-btn { padding: 5px 9px; font-size: 0.7rem; }
+  .store-btn { padding: 5px 9px; font-size: 0.68rem; }
 }
 @media (max-width: 900px) {
   .main-nav {
@@ -344,6 +349,33 @@ section { padding: 60px 0; }
   font-weight: 600;
   color: var(--c-accent-light);
   margin-bottom: 22px;
+}
+.hero-uk-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  background: var(--c-accent);
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--c-dark);
+  margin-bottom: 20px;
+  box-shadow: 0 0 0 0 rgba(201, 150, 44, 0.55);
+  animation: hero-uk-pulse 2.2s ease-out infinite;
+  transition: background var(--transition), transform var(--transition);
+}
+.hero-uk-banner svg { width: 19px; height: 19px; flex-shrink: 0; }
+.hero-uk-banner:hover {
+  background: var(--c-accent-light);
+  transform: translateY(-2px) scale(1.02);
+  animation-play-state: paused;
+}
+@keyframes hero-uk-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(201, 150, 44, 0.55); }
+  70% { box-shadow: 0 0 0 14px rgba(201, 150, 44, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(201, 150, 44, 0); }
 }
 .hero h1 {
   color: var(--c-white);
@@ -1051,6 +1083,16 @@ section { padding: 60px 0; }
 }
 .car-modal-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
 .car-modal-photo .car-photo-badge { position: absolute; top: 14px; left: 14px; z-index: 2; }
+.car-modal-photo-thumb {
+  position: absolute !important;
+  inset: auto 14px 14px auto !important;
+  width: 84px !important;
+  height: 60px !important;
+  border-radius: 8px;
+  border: 2px solid var(--c-white);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
 .car-modal-body { padding: 34px; display: flex; flex-direction: column; gap: 6px; }
 .car-modal-body h3 { font-size: 1.35rem; }
 .car-modal-body .car-year { color: var(--c-text-soft); font-size: 0.88rem; margin-bottom: 6px; }
