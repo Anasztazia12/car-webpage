@@ -25,13 +25,17 @@
       <a href="index.html#contact" class="nav-link" data-i18n="nav_contact">Kapcsolat</a>
     </nav>
     <div class="header-actions">
+      <div class="store-switch" role="group" data-i18n-aria="store_switch_aria" aria-label="Telephely választása">
+        <button type="button" class="store-btn" data-store="hu" data-i18n-aria="store_hu_label" aria-label="Magyarország">🇭🇺</button>
+        <button type="button" class="store-btn" data-store="uk" data-i18n-aria="store_uk_label" aria-label="United Kingdom">🇬🇧</button>
+      </div>
       <div class="lang-switch" role="group" aria-label="Nyelv / Language">
         <button type="button" class="lang-btn" data-lang="en">EN</button>
         <button type="button" class="lang-btn" data-lang="hu">HU</button>
       </div>
-      <a href="tel:+36301234567" data-i18n-href="contact_phone_href" class="header-phone">
+      <a href="tel:+36301234567" data-store-href="phoneHref" class="header-phone">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2c-8 0-15-7-15-15a2 2 0 0 1 2-2Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span data-i18n="contact_phone_display">+36 30 123 4567</span>
+        <span data-store="phoneDisplay">+36 30 123 4567</span>
       </a>
       <a href="index.html#contact" class="btn btn-primary" data-i18n="btn_get_quote_header">Ajánlatkérés</a>
       <button class="nav-toggle" id="navToggle" data-i18n-aria="aria_menu_toggle" aria-label="Menü megnyitása" aria-expanded="false">
@@ -157,9 +161,9 @@
     <div class="footer-col">
       <h4 data-i18n="footer_contact">Elérhetőség</h4>
       <ul class="footer-links">
-        <li data-i18n="contact_address">1051 Budapest, József Attila utca 6.</li>
-        <li><a href="tel:+36301234567" data-i18n-href="contact_phone_href" data-i18n="contact_phone_display">+36 30 123 4567</a></li>
-        <li><a href="mailto:info@carnovoxmotor.hu" data-i18n-href="contact_email_href" data-i18n="contact_email_display">info@carnovoxmotor.hu</a></li>
+        <li data-store="address">1051 Budapest, József Attila utca 6.</li>
+        <li><a href="tel:+36301234567" data-store-href="phoneHref" data-store="phoneDisplay">+36 30 123 4567</a></li>
+        <li><a href="mailto:info@carnovoxmotor.hu" data-store-href="emailHref" data-store="emailDisplay">info@carnovoxmotor.hu</a></li>
       </ul>
     </div>
   </div>

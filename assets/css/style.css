@@ -98,6 +98,11 @@ section { padding: 60px 0; }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
 .section-head h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); margin-bottom: 14px; }
 .section-head p { color: var(--c-text-muted); font-size: 1.05rem; }
+.store-note {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--c-text-soft);
+}
 
 .section-foot {
   margin-top: 28px;
@@ -232,6 +237,26 @@ section { padding: 60px 0; }
 }
 .lang-btn.active { background: var(--c-dark); color: var(--c-white); }
 .lang-btn:not(.active):hover { background: var(--c-bg-alt); color: var(--c-text); }
+
+.store-switch {
+  display: flex;
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.store-btn {
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.45;
+  filter: grayscale(1);
+  transition: background var(--transition), opacity var(--transition), filter var(--transition);
+}
+.store-btn.active { background: var(--c-bg-alt); opacity: 1; filter: grayscale(0); }
+.store-btn:not(.active):hover { opacity: 0.8; }
 
 .nav-toggle {
   display: none;

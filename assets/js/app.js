@@ -64,7 +64,7 @@
 
       tag_featured: "Kiemelt ajánlatok",
       heading_featured: "Népszerű autóink",
-      desc_featured: "Kézzel válogatott, ellenőrzött állapotú autók — a teljes kínálatunkat az Autóink oldalon találod.",
+      desc_featured: "Ellenőrzött, kiváló állapotú autók — a teljes kínálatunkat az Autóink oldalon találod.",
       btn_view_all_cars: "Összes autó megtekintése",
 
       badge_certified: "Ellenőrzött",
@@ -129,15 +129,11 @@
       label_phone_info: "Telefon",
       label_email_info: "E-mail",
       label_hours: "Nyitvatartás",
-      hours_value: "H–P: 8:00–18:00 · Szo: 9:00–13:00",
-      contact_address: "1051 Budapest, József Attila utca 6.",
-      contact_phone_display: "+36 30 123 4567",
-      contact_phone_href: "tel:+36301234567",
-      contact_email_display: "info@carnovoxmotor.hu",
-      contact_email_href: "mailto:info@carnovoxmotor.hu",
-      map_href: "https://www.bing.com/maps/search?mepi=57~~Embedded~LargeMapLink&ty=18&v=2&sV=1&qpvt=london,+United+Kingdom+71%E2%80%9375+Shelton+Street,+London+WC2H+9JQ,+United+Kingdom&FORM=MIRE&style=r&q=Budapest+Jozsef+Attila+utca+6&cp=47.498882~19.049433&lvl=16",
-      map_embed_src: "https://www.google.com/maps?q=47.498882,19.049433&z=16&output=embed",
       map_open_label: "Megnyitás térképen",
+      store_switch_aria: "Telephely választása",
+      store_hu_label: "Magyarország",
+      store_uk_label: "Egyesült Királyság",
+      store_note: "Két telephelyünk van: Magyarországon és az Egyesült Királyságban is megtalálsz minket — válaszd ki fent, melyiket szeretnéd böngészni.",
       form_success_msg: "Köszönjük! Üzenetedet megkaptuk, hamarosan felvesszük veled a kapcsolatot.",
       label_name: "Teljes név *",
       ph_name: "Kovács János",
@@ -185,7 +181,8 @@
       page_about_title: "A CarnovoX Motor története",
       page_about_desc: "2012 óta segítjük ügyfeleinket abban, hogy megtalálják a hozzájuk illő autót — átláthatóan, megbízhatóan, garanciával.",
       story_tag: "A kezdetek",
-      story_title: "Egy kis budapesti telephelyből mára a régió megbízható autókereskedése",
+      story_title: "Már Angliában is jelen vagyunk!",
+      story_title1: "Egy kis budapesti telephelyről indulva, mára a régió legmegbízhatóbb autókereskedése lettünk.",
       story_p1: "A CarnovoX Motort 2012-ben alapítottuk azzal a céllal, hogy megváltoztassuk, milyen a használtautó-vásárlás. Túl sok vevő szerzett rossz tapasztalatot elhallgatott hibákkal, tekert kilométeróra-állással és nyomott alkuval teli folyamatokkal.",
       story_p2: "Mi egy egyszerű elvet követünk: minden autót úgy vizsgálunk át és árazunk, mintha a sajátunknak vennénk. Ez a hozzáállás segített felépíteni egy csapatot és egy ügyfélkört, amely ma is bízik bennünk.",
       story_p3: "Mára évente több száz autót értékesítünk, saját műszaki vizsgálati protokollal, finanszírozási partnerhálózattal és garanciavállalással — miközben a személyes, ügyfélközpontú hozzáállásunkat nem adtuk fel.",
@@ -292,7 +289,7 @@
 
       tag_featured: "Featured offers",
       heading_featured: "Our popular cars",
-      desc_featured: "Hand-picked, inspected cars — see our full inventory on the Our Cars page.",
+      desc_featured: "Inspected, high-quality cars — see our full inventory on the Our Cars page.",
       btn_view_all_cars: "View all cars",
 
       badge_certified: "Certified",
@@ -357,15 +354,11 @@
       label_phone_info: "Phone",
       label_email_info: "Email",
       label_hours: "Opening hours",
-      hours_value: "Mon–Fri: 8:00–18:00 · Sat: 9:00–13:00 (CET)",
-      contact_address: "71–75 Shelton Street, London WC2H 9JQ, United Kingdom",
-      contact_phone_display: "+44 20 7946 0958",
-      contact_phone_href: "tel:+442079460958",
-      contact_email_display: "international@carnovoxmotor.com",
-      contact_email_href: "mailto:international@carnovoxmotor.com",
-      map_href: "http://www.71-75.co.uk",
-      map_embed_src: "https://www.google.com/maps?q=71-75+Shelton+Street,+London+WC2H+9JQ,+United+Kingdom&z=16&output=embed",
       map_open_label: "Open in Maps",
+      store_switch_aria: "Choose a location",
+      store_hu_label: "Hungary",
+      store_uk_label: "United Kingdom",
+      store_note: "We have two locations: you'll find us in Hungary and in the United Kingdom too — choose which one to browse above.",
       form_success_msg: "Thank you! We've received your message and will get back to you shortly.",
       label_name: "Full name *",
       ph_name: "John Smith",
@@ -413,7 +406,8 @@
       page_about_title: "The story of CarnovoX Motor",
       page_about_desc: "Since 2012 we've helped customers find the right car for them — transparently, reliably, with a warranty.",
       story_tag: "The beginning",
-      story_title: "From a small Budapest lot to the region's most trusted used car dealer",
+      story_title: "And we're proud to have expanded to the UK!",
+      story_title1: "What began as a small dealership in Budapest has grown into one of the region's most trusted used car dealers.",
       story_p1: "We founded CarnovoX Motor in 2012 with the goal of changing what buying a used car feels like. Too many buyers had bad experiences with concealed faults, rolled-back odometers and high-pressure haggling.",
       story_p2: "We follow one simple principle: we inspect and price every car as if we were buying it for ourselves. That mindset helped us build a team and a customer base that still trusts us today.",
       story_p3: "Today we sell hundreds of cars a year, backed by our own inspection protocol, a financing partner network and warranty coverage — without giving up the personal, customer-first approach we started with.",
@@ -467,15 +461,71 @@
   const LANG_KEY = "cnx-lang";
   let currentLang = localStorage.getItem(LANG_KEY) || "hu";
   if (!I18N[currentLang]) currentLang = "hu";
-  let carsPageReset = null;
+
+  // The store (which real-world location's inventory/contact info you're browsing) is
+  // fully independent from the UI language — you can view the UK store in Hungarian, etc.
+  const STORE_KEY = "cnx-store";
+  const STORE_DATA = {
+    hu: {
+      address: "1051 Budapest, József Attila utca 6.",
+      phoneDisplay: "+36 30 123 4567",
+      phoneHref: "tel:+36301234567",
+      emailDisplay: "info@carnovoxmotor.hu",
+      emailHref: "mailto:info@carnovoxmotor.hu",
+      hours: "H–P: 8:00–18:00 · Szo: 9:00–13:00",
+      mapEmbedSrc: "https://www.google.com/maps?q=47.498882,19.049433&z=16&output=embed",
+      mapHref: "https://www.bing.com/maps/search?mepi=57~~Embedded~LargeMapLink&ty=18&v=2&sV=1&qpvt=london,+United+Kingdom+71%E2%80%9375+Shelton+Street,+London+WC2H+9JQ,+United+Kingdom&FORM=MIRE&style=r&q=Budapest+Jozsef+Attila+utca+6&cp=47.498882~19.049433&lvl=16"
+    },
+    uk: {
+      address: "71–75 Shelton Street, London WC2H 9JQ, United Kingdom",
+      phoneDisplay: "+44 20 7946 0958",
+      phoneHref: "tel:+442079460958",
+      emailDisplay: "international@carnovoxmotor.com",
+      emailHref: "mailto:international@carnovoxmotor.com",
+      hours: "Mon–Fri: 8:00–18:00 · Sat: 9:00–13:00 (CET)",
+      mapEmbedSrc: "https://www.google.com/maps?q=71-75+Shelton+Street,+London+WC2H+9JQ,+United+Kingdom&z=16&output=embed",
+      mapHref: "http://www.71-75.co.uk"
+    }
+  };
+  let currentStore = localStorage.getItem(STORE_KEY) || "hu";
+  if (!STORE_DATA[currentStore]) currentStore = "hu";
+  let carsPageRender = null;
 
   function t(key) {
     return (I18N[currentLang] && I18N[currentLang][key]) || (I18N.hu[key]) || key;
   }
 
   function currentMarket() {
-    return currentLang === "en" ? "uk" : "hu";
+    return currentStore;
   }
+
+  function applyStoreData() {
+    const data = STORE_DATA[currentStore];
+    document.querySelectorAll("[data-store]").forEach((el) => {
+      el.textContent = data[el.getAttribute("data-store")];
+    });
+    document.querySelectorAll("[data-store-href]").forEach((el) => {
+      el.setAttribute("href", data[el.getAttribute("data-store-href")]);
+    });
+    document.querySelectorAll("[data-store-src]").forEach((el) => {
+      el.setAttribute("src", data[el.getAttribute("data-store-src")]);
+    });
+    document.querySelectorAll(".store-btn").forEach((btn) => {
+      btn.classList.toggle("active", btn.getAttribute("data-store") === currentStore);
+    });
+  }
+
+  function setStore(store) {
+    if (!STORE_DATA[store]) return;
+    currentStore = store;
+    localStorage.setItem(STORE_KEY, store);
+    applyStoreData();
+    refreshMarketUI();
+  }
+
+  document.querySelectorAll(".store-btn").forEach((btn) => {
+    btn.addEventListener("click", () => setStore(btn.getAttribute("data-store")));
+  });
 
   function applyTranslations() {
     document.documentElement.lang = currentLang;
@@ -491,12 +541,6 @@
     });
     document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
       el.setAttribute("alt", t(el.getAttribute("data-i18n-alt")));
-    });
-    document.querySelectorAll("[data-i18n-href]").forEach((el) => {
-      el.setAttribute("href", t(el.getAttribute("data-i18n-href")));
-    });
-    document.querySelectorAll("[data-i18n-src]").forEach((el) => {
-      el.setAttribute("src", t(el.getAttribute("data-i18n-src")));
     });
     document.querySelectorAll("[data-i18n-title]").forEach((el) => {
       document.title = t(el.getAttribute("data-i18n-title"));
@@ -666,7 +710,7 @@
       <p class="car-modal-desc">${car.description}</p>
       <div class="car-modal-actions">
         <a href="index.html#contact" class="btn btn-primary">${t("btn_interested")}</a>
-        <a href="${t("contact_phone_href")}" class="btn btn-outline">${t("contact_phone_display")}</a>
+        <a href="${STORE_DATA[car.market].phoneHref}" class="btn btn-outline">${STORE_DATA[car.market].phoneDisplay}</a>
       </div>`;
 
     overlay.classList.add("open");
@@ -732,7 +776,7 @@
     renderPriceOptions(document.getElementById("fPrice"));
     renderFooterBrands();
     renderFeatured();
-    if (carsPageReset) carsPageReset();
+    if (carsPageRender) carsPageRender();
   }
 
   /* ---------------- Cars listing page (cars.html) ---------------- */
@@ -806,16 +850,6 @@
       render();
     }
 
-    function resetForMarketChange() {
-      renderBrandOptions(els.brand);
-      renderPriceOptions(els.price);
-      els.search.value = "";
-      els.body.value = "";
-      els.fuel.value = "";
-      els.sort.value = "newest";
-      resetAndRender();
-    }
-
     [els.search].forEach((el) => el.addEventListener("input", resetAndRender));
     [els.brand, els.body, els.fuel, els.price, els.sort].forEach((el) => el.addEventListener("change", resetAndRender));
     els.reset.addEventListener("click", () => {
@@ -832,7 +866,7 @@
       render();
     });
 
-    carsPageReset = resetForMarketChange;
+    carsPageRender = render;
     render();
   }
 
@@ -926,6 +960,7 @@
     renderBrandOptions(document.getElementById("qMarka"));
     renderPriceOptions(document.getElementById("qAr"));
     renderFooterBrands();
+    applyStoreData();
     applyTranslations();
     initReveal();
   });
