@@ -86,6 +86,10 @@
       label_power: "Teljesítmény",
       label_drivetrain: "Hajtás",
       label_gearbox: "Váltó",
+      img_view_full: "Kép megtekintése nagyban",
+      car_not_found_title: "Az autó nem található",
+      car_not_found_desc: "Előfordulhat, hogy ez az autó már elkelt, vagy a link hibás.",
+      car_not_found_link: "Vissza az autóinkhoz",
 
       tag_why: "Miért mi?",
       heading_why: "Amiért ügyfeleink minket választanak",
@@ -307,6 +311,10 @@
       label_power: "Power",
       label_drivetrain: "Drivetrain",
       label_gearbox: "Gearbox",
+      img_view_full: "View image full size",
+      car_not_found_title: "Car not found",
+      car_not_found_desc: "This car may have already been sold, or the link is incorrect.",
+      car_not_found_link: "Back to our cars",
 
       tag_why: "Why us?",
       heading_why: "Why our customers choose us",
@@ -700,78 +708,148 @@
             <div class="car-spec">${ICON_FUEL}${t("spec_" + car.fuel)}</div>
           </div>
           <div class="car-card-foot">
-            <button type="button" class="btn btn-outline btn-sm" data-details="${car.id}">${t("btn_details")}</button>
+            <a href="car.html?id=${car.id}" class="btn btn-outline btn-sm">${t("btn_details")}</a>
             <a href="index.html#contact" class="btn btn-dark btn-sm">${t("btn_interested")}</a>
           </div>
         </div>
       </article>`;
   }
 
-  /* ---------------- Car details modal ---------------- */
-  function ensureModal() {
-    if (document.getElementById("carModalOverlay")) return;
+  /* ---------------- Full-size image lightbox (car.html) ---------------- */
+  const ICON_EXPAND = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M3 16v3a2 2 0 0 0 2 2h3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const ICON_CHEV_LEFT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const ICON_CHEV_RIGHT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  let lightboxImages = [];
+  let lightboxIndex = 0;
+
+  function ensureLightbox() {
+    if (document.getElementById("imgLightbox")) return;
     const overlay = document.createElement("div");
-    overlay.className = "car-modal-overlay";
-    overlay.id = "carModalOverlay";
+    overlay.className = "img-lightbox";
+    overlay.id = "imgLightbox";
     overlay.innerHTML = `
-      <div class="car-modal" role="dialog" aria-modal="true">
-        <button type="button" class="car-modal-close" data-modal-close aria-label="Close">${ICON_CLOSE}</button>
-        <div class="car-modal-photo" id="carModalPhoto"></div>
-        <div class="car-modal-body" id="carModalBody"></div>
-      </div>`;
+      <button type="button" class="img-lightbox-close" data-lightbox-close aria-label="Close">${ICON_CLOSE}</button>
+      <button type="button" class="img-lightbox-nav prev" data-lightbox-prev aria-label="Previous">${ICON_CHEV_LEFT}</button>
+      <img class="img-lightbox-img" id="imgLightboxImg" src="" alt="">
+      <button type="button" class="img-lightbox-nav next" data-lightbox-next aria-label="Next">${ICON_CHEV_RIGHT}</button>`;
     document.body.appendChild(overlay);
-    overlay.addEventListener("click", (e) => { if (e.target === overlay) closeCarModal(); });
+    overlay.addEventListener("click", (e) => { if (e.target === overlay) closeLightbox(); });
   }
 
-  function openCarModal(id) {
-    const car = CARS_DATA.find((c) => c.id === id);
-    if (!car) return;
-    ensureModal();
-    const overlay = document.getElementById("carModalOverlay");
-    const photoEl = document.getElementById("carModalPhoto");
-    const bodyEl = document.getElementById("carModalBody");
-    const badgeHtml = car.badge
-      ? `<span class="car-photo-badge${car.badge !== "certified" ? " alt" : ""}">${t("badge_" + car.badge)}</span>`
-      : "";
+  function updateLightbox(alt) {
+    const img = document.getElementById("imgLightboxImg");
+    img.src = `assets/images/${lightboxImages[lightboxIndex]}`;
+    img.alt = alt || "";
+    const overlay = document.getElementById("imgLightbox");
+    overlay.querySelectorAll(".img-lightbox-nav").forEach((btn) => {
+      btn.style.display = lightboxImages.length > 1 ? "flex" : "none";
+    });
+  }
 
-    const thumbHtml = car.img2
-      ? `<img class="car-modal-photo-thumb" src="assets/images/${car.img2}" alt="${car.model}" onerror="this.remove()">`
-      : "";
-    photoEl.innerHTML = `${badgeHtml}<img src="assets/images/${car.img}" alt="${car.model}" onerror="this.remove()">${thumbHtml}`;
-    bodyEl.innerHTML = `
-      <h3>${car.model}</h3>
-      <span class="car-year">${car.year} · ${formatNum(car.km)} km</span>
-      <div class="car-modal-price">${priceHtml(car)}<small>${t("installment_template").replace("{n}", formatPrice(car.installment, car.market))}</small></div>
-      <div class="car-modal-specs">
-        <div class="car-modal-spec"><span>${t("label_engine")}</span><strong>${car.engineDesc}</strong></div>
-        <div class="car-modal-spec"><span>${t("label_power")}</span><strong>${car.power}</strong></div>
-        <div class="car-modal-spec"><span>${t("label_gearbox")}</span><strong>${t("spec_" + car.transmission)}</strong></div>
-        <div class="car-modal-spec"><span>${t("label_drivetrain")}</span><strong>${car.drivetrain}</strong></div>
-      </div>
-      <p class="car-modal-desc">${car.description}</p>
-      <div class="car-modal-actions">
-        <a href="index.html#contact" class="btn btn-primary">${t("btn_interested")}</a>
-        <a href="${STORE_DATA[car.market].phoneHref}" class="btn btn-outline">${STORE_DATA[car.market].phoneDisplay}</a>
-      </div>`;
-
-    overlay.classList.add("open");
+  function openLightbox(images, index, alt) {
+    ensureLightbox();
+    lightboxImages = images;
+    lightboxIndex = index;
+    updateLightbox(alt);
+    document.getElementById("imgLightbox").classList.add("open");
     document.body.style.overflow = "hidden";
   }
 
-  function closeCarModal() {
-    const overlay = document.getElementById("carModalOverlay");
+  function closeLightbox() {
+    const overlay = document.getElementById("imgLightbox");
     if (overlay) overlay.classList.remove("open");
     document.body.style.overflow = "";
   }
 
   document.addEventListener("click", (e) => {
-    const trigger = e.target.closest("[data-details]");
-    if (trigger) { openCarModal(Number(trigger.getAttribute("data-details"))); return; }
-    if (e.target.closest("[data-modal-close]")) closeCarModal();
+    if (e.target.closest("[data-lightbox-close]")) closeLightbox();
+    if (e.target.closest("[data-lightbox-prev]")) {
+      lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+      updateLightbox();
+    }
+    if (e.target.closest("[data-lightbox-next]")) {
+      lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
+      updateLightbox();
+    }
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeCarModal();
+    if (e.key === "Escape") closeLightbox();
   });
+
+  /* ---------------- Car details page (car.html) ---------------- */
+  function initCarDetailPage() {
+    const root = document.getElementById("carDetailRoot");
+    if (!root) return;
+
+    const id = Number(new URLSearchParams(window.location.search).get("id"));
+    const car = CARS_DATA.find((c) => c.id === id);
+    const notFound = document.getElementById("carNotFound");
+
+    if (!car) {
+      root.style.display = "none";
+      document.getElementById("carBreadcrumbModel").closest(".breadcrumb").style.display = "none";
+      if (notFound) notFound.style.display = "block";
+      return;
+    }
+
+    document.title = `${car.model} | CarnovoX Motor`;
+    document.getElementById("carBreadcrumbModel").textContent = car.model;
+    document.getElementById("carDetailTitle").textContent = car.model;
+    document.getElementById("carDetailYearKm").textContent = `${car.year} · ${formatNum(car.km)} km`;
+
+    const images = [car.img, car.img2].filter(Boolean);
+    const badgeHtml = car.badge
+      ? `<span class="car-photo-badge${car.badge !== "certified" ? " alt" : ""}">${t("badge_" + car.badge)}</span>`
+      : "";
+
+    root.innerHTML = `
+      <div class="car-detail-gallery">
+        <div class="car-detail-main-photo" id="carDetailMainPhoto">
+          ${badgeHtml}
+          <img src="assets/images/${images[0]}" alt="${car.model}" onerror="this.remove()">
+          <button type="button" class="car-detail-zoom" data-lightbox-trigger aria-label="${t("img_view_full")}">${ICON_EXPAND}</button>
+        </div>
+        ${images.length > 1 ? `
+        <div class="car-detail-thumbs">
+          ${images.map((img, i) => `
+            <button type="button" class="car-detail-thumb${i === 0 ? " active" : ""}" data-thumb-index="${i}">
+              <img src="assets/images/${img}" alt="${car.model}" onerror="this.remove()">
+            </button>`).join("")}
+        </div>` : ""}
+      </div>
+      <div class="car-detail-info">
+        <div class="car-detail-price">${priceHtml(car)}<small>${t("installment_template").replace("{n}", formatPrice(car.installment, car.market))}</small></div>
+        <div class="car-detail-specs">
+          <div class="car-detail-spec"><span>${t("label_engine")}</span><strong>${car.engineDesc}</strong></div>
+          <div class="car-detail-spec"><span>${t("label_power")}</span><strong>${car.power}</strong></div>
+          <div class="car-detail-spec"><span>${t("label_gearbox")}</span><strong>${t("spec_" + car.transmission)}</strong></div>
+          <div class="car-detail-spec"><span>${t("label_drivetrain")}</span><strong>${car.drivetrain}</strong></div>
+        </div>
+        <p class="car-detail-desc">${car.description}</p>
+        <div class="car-detail-actions">
+          <a href="index.html#contact" class="btn btn-primary">${t("btn_interested")}</a>
+          <a href="${STORE_DATA[car.market].phoneHref}" class="btn btn-outline">${STORE_DATA[car.market].phoneDisplay}</a>
+        </div>
+      </div>`;
+
+    let currentIndex = 0;
+    function setMain(index) {
+      currentIndex = index;
+      const mainImg = root.querySelector("#carDetailMainPhoto img");
+      if (mainImg) mainImg.src = `assets/images/${images[index]}`;
+      root.querySelectorAll(".car-detail-thumb").forEach((btn, i) => btn.classList.toggle("active", i === index));
+    }
+    root.querySelectorAll("[data-thumb-index]").forEach((btn) => {
+      btn.addEventListener("click", () => setMain(Number(btn.getAttribute("data-thumb-index"))));
+    });
+    root.querySelectorAll("[data-lightbox-trigger]").forEach((btn) => {
+      btn.addEventListener("click", () => openLightbox(images, currentIndex, car.model));
+    });
+    root.querySelector("#carDetailMainPhoto img")?.addEventListener("click", () => openLightbox(images, currentIndex, car.model));
+
+    observeReveal();
+  }
 
   /* ---------------- Featured cars (index.html) ---------------- */
   function renderFeatured() {
@@ -1013,7 +1091,9 @@
     initBackToTop();
     initContactForm();
     initFooterYear();
+    initReveal();
     initCarsPage();
+    initCarDetailPage();
     renderFeatured();
     renderBrandOptions(document.getElementById("qMarka"));
     renderPriceOptions(document.getElementById("qAr"));
@@ -1021,6 +1101,5 @@
     renderTeam();
     applyStoreData();
     applyTranslations();
-    initReveal();
   });
 })();

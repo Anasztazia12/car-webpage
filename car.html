@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="carPageTitle">Autó részletei | CarnovoX Motor</title>
+<meta name="description" id="metaDesc" content="Részletes autóinformációk a CarnovoX Motor kínálatából.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c1220'/%3E%3Ctext x='32' y='45' font-family='Georgia, Times, serif' font-weight='700' font-size='38' fill='%23c9962c' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/images/logo-crop.png" alt="CarnovoX Motor" class="site-logo-img">
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link" data-i18n="nav_home">Főoldal</a>
+      <a href="cars.html" class="nav-link active" data-i18n="nav_cars">Autóink</a>
+      <a href="about.html" class="nav-link" data-i18n="nav_about">Rólunk</a>
+      <a href="index.html#contact" class="nav-link" data-i18n="nav_contact">Kapcsolat</a>
+    </nav>
+    <div class="header-actions">
+      <div class="store-switch" role="group" data-i18n-aria="store_switch_aria" aria-label="Telephely választása">
+        <button type="button" class="store-btn" data-store="hu" data-i18n-aria="store_hu_label" aria-label="Magyarország">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0Z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg>
+          Budapest
+        </button>
+        <button type="button" class="store-btn" data-store="uk" data-i18n-aria="store_uk_label" aria-label="United Kingdom">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0Z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg>
+          London
+        </button>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Nyelv / Language">
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="hu">HU</button>
+      </div>
+      <a href="tel:+36301234567" data-store-href="phoneHref" class="header-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2c-8 0-15-7-15-15a2 2 0 0 1 2-2Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-store="phoneDisplay">+36 30 123 4567</span>
+      </a>
+      <a href="index.html#contact" class="btn btn-primary" data-i18n="btn_get_quote_header">Ajánlatkérés</a>
+      <button class="nav-toggle" id="navToggle" data-i18n-aria="aria_menu_toggle" aria-label="Menü megnyitása" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-banner">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html" data-i18n="breadcrumb_home">Főoldal</a> / <a href="cars.html" data-i18n="breadcrumb_cars">Autóink</a> / <span id="carBreadcrumbModel"></span>
+      </div>
+      <h1 id="carDetailTitle"></h1>
+      <p id="carDetailYearKm"></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="car-detail-grid" id="carDetailRoot"></div>
+      <div class="car-not-found" id="carNotFound" style="display:none">
+        <h2 data-i18n="car_not_found_title">Az autó nem található</h2>
+        <p data-i18n="car_not_found_desc">Előfordulhat, hogy ez az autó már elkelt, vagy a link hibás.</p>
+        <a href="cars.html" class="btn btn-primary" data-i18n="car_not_found_link">Vissza az autóinkhoz</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <div class="footer-brand-row">
+        <img src="assets/images/logo-crop.png" alt="CarnovoX Motor" class="site-logo-img">
+      </div>
+      <p data-i18n="footer_about">Megbízható használt autók, átlátható folyamatokkal és garanciával.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_quicklinks">Gyorslinkek</h4>
+      <ul class="footer-links">
+        <li><a href="index.html" data-i18n="nav_home">Főoldal</a></li>
+        <li><a href="cars.html" data-i18n="nav_cars">Autóink</a></li>
+        <li><a href="about.html" data-i18n="nav_about">Rólunk</a></li>
+        <li><a href="index.html#contact" data-i18n="nav_contact">Kapcsolat</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_brands">Márkák</h4>
+      <ul class="footer-links js-footer-brands"></ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_contact">Elérhetőség</h4>
+      <ul class="footer-links">
+        <li data-store="address">1051 Budapest, József Attila utca 6.</li>
+        <li><a href="tel:+36301234567" data-store-href="phoneHref" data-store="phoneDisplay">+36 30 123 4567</a></li>
+        <li><a href="mailto:info@carnovoxmotor.hu" data-store-href="emailHref" data-store="emailDisplay">info@carnovoxmotor.hu</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span id="year"></span> CarnovoX Motor. <span data-i18n="footer_rights">Minden jog fenntartva.</span></span>
+    <span><a href="#" data-i18n="footer_privacy">Adatvédelem</a> · <a href="#" data-i18n="footer_terms">ÁSZF</a></span>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Vissza a tetejére">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
