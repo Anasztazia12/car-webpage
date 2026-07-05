@@ -6,7 +6,8 @@
       "Bash(pkill -f \"serve -l 8791\")",
       "Bash(pkill -f \"npx.*serve\")",
       "Bash(node verify-focus.js)",
-      "Bash(node verify-photo-sort.js)"
+      "Bash(node verify-photo-sort.js)",
+      "Bash(pkill -f \"serve -l 8792\")"
     ]
   }
 }
