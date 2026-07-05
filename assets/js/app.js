@@ -788,7 +788,8 @@
 
     if (!car) {
       root.style.display = "none";
-      document.getElementById("carBreadcrumbModel").closest(".breadcrumb").style.display = "none";
+      const banner = document.querySelector(".page-banner");
+      if (banner) banner.style.display = "none";
       if (notFound) notFound.style.display = "block";
       return;
     }
