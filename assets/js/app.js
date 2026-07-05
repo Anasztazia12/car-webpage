@@ -207,19 +207,13 @@
       timeline2_desc: "Kidolgoztuk 120 pontos ellenőrzési rendszerünket, amelyet azóta is minden autón elvégzünk.",
       timeline3_title: "Finanszírozási partnerhálózat",
       timeline3_desc: "Együttműködést indítottunk vezető pénzintézetekkel a gyors, rugalmas hitelbírálatért.",
-      timeline4_title: "1500. eladott autónk",
-      timeline4_desc: "Mára több ezer elégedett ügyfelet szolgáltunk ki, 98%-os ügyfél-elégedettség mellett.",
+      timeline4_title: "Angliai üzletünk megnyitása",
+      timeline4_desc: "Megnyitottuk az első angol irodánkat, lehetőséget teremtve az európai piac felé.",
+      timeline5_title: "Több mint 6 000 eladott autó",
+      timeline5_desc: "Mára több ezer elégedett ügyfelet szolgáltunk ki, 98%-os ügyfél-elégedettség mellett.",
       team_tag: "Csapatunk",
       team_title: "Ismerd meg a csapatot",
       team_desc: "Tapasztalt szakértők, akik segítenek megtalálni a hozzád illő autót.",
-      team1_name: "Horváth Gábor",
-      team1_role: "Alapító & ügyvezető",
-      team2_name: "Tóth Anna",
-      team2_role: "Értékesítési vezető",
-      team3_name: "Kiss Balázs",
-      team3_role: "Vezető autószerelő",
-      team4_name: "Varga Dóra",
-      team4_role: "Finanszírozási tanácsadó",
       badges_tag: "Miért bízhatsz bennünk",
       badges_title: "Tanúsítványaink és garanciáink",
       badge1_title: "12 hónap garancia",
@@ -434,19 +428,13 @@
       timeline2_desc: "We developed our 120-point inspection system, still used on every car today.",
       timeline3_title: "Financing partner network",
       timeline3_desc: "We launched partnerships with leading banks for fast, flexible loan approval.",
-      timeline4_title: "Our 1,500th car sold",
-      timeline4_desc: "Today we've served thousands of happy customers, with 98% customer satisfaction.",
+      timeline4_title: "Opening our UK office",
+      timeline4_desc: "We opened our first English office, creating an opportunity to reach the European market.",
+      timeline5_title: "More than 6,000 cars sold",
+      timeline5_desc: "Today we've served thousands of happy customers, with 98% customer satisfaction.",
       team_tag: "Our team",
       team_title: "Meet the team",
       team_desc: "Experienced experts who help you find the right car for you.",
-      team1_name: "Gabriel Hart",
-      team1_role: "Founder & CEO",
-      team2_name: "Anna Fields",
-      team2_role: "Head of Sales",
-      team3_name: "Nick Baker",
-      team3_role: "Lead Mechanic",
-      team4_name: "Dora Vance",
-      team4_role: "Financing Advisor",
       badges_tag: "Why you can trust us",
       badges_title: "Our certifications and guarantees",
       badge1_title: "12-month warranty",
@@ -494,6 +482,35 @@
   let currentStore = localStorage.getItem(STORE_KEY) || "hu";
   if (!STORE_DATA[currentStore]) currentStore = "hu";
   let carsPageRender = null;
+
+  // Team members belong to a physical office, just like the address/phone above —
+  // their names and roles follow the store, not the UI language.
+  const TEAM_DATA = {
+    hu: [
+      { name: "Horváth Gábor", role: "Alapító & ügyvezető", img: "horvath-gabor.png" },
+      { name: "Tóth Anna", role: "Értékesítési vezető", img: "toth-anna.png" },
+      { name: "Kiss Balázs", role: "Vezető autószerelő", img: "kiss-balazs.png" },
+      { name: "Varga Dóra", role: "Finanszírozási tanácsadó", img: "varga-dora.png" }
+    ],
+    uk: [
+      { name: "Gabriel Hart", role: "Founder & CEO", img: "gabriel-hart.png" },
+      { name: "Anna Fields", role: "Head of Sales", img: "anna-fields.png" },
+      { name: "Nick Baker", role: "Lead Mechanic", img: "nick-baker.png" },
+      { name: "Dora Vance", role: "Financing Advisor", img: "dora-vance.png" }
+    ]
+  };
+
+  function renderTeam() {
+    const grid = document.getElementById("teamGrid");
+    if (!grid) return;
+    grid.innerHTML = TEAM_DATA[currentStore].map((member) => `
+      <div class="team-card reveal">
+        <div class="team-photo"><img src="assets/images/${member.img}" alt="${member.name}" loading="lazy" onerror="this.remove()"></div>
+        <h3>${member.name}</h3>
+        <span>${member.role}</span>
+      </div>`).join("");
+    observeReveal();
+  }
 
   function t(key) {
     return (I18N[currentLang] && I18N[currentLang][key]) || (I18N.hu[key]) || key;
@@ -629,6 +646,8 @@
       power: "286–340 LE", engineDesc: "3.0 V6 TFSI (benzin) / 3.0 V6 TDI (dízel)", drivetrain: "8 fokozatú automata, quattro összkerékhajtás", description: "Prémium SUV sportos kupévonalvezetéssel. Digitális cockpit, két érintőkijelző és bőr sportülések az utastérben, Matrix LED fényszórók, 20–22 colos többküllős felnik és opcionális adaptív légrugózás kívül. Biztonsági csomag: sávtartó asszisztens, holttérfigyelő, 360°-os kamera és adaptív tempomat." },
     { id: 17, market: "hu", brand: "ford", model: "Ford Focus", img: "ford.png", img2: "ford1.png", hasPhoto: true, year: 2018, km: 79000, price: 4790000, installment: 49900, fuel: "benzin", transmission: "manual", body: "hatchback", badge: "certified", featured: false,
      power: "125 LE", engineDesc: "1.0 EcoBoost (benzin) / 1.6 TDCi (dízel)", drivetrain: "Elsőkerék-hajtás", description: "Metálkék, tiszta és karbantartott ferdehátú, szögletes LED-es fényszórókkal és ezüst többküllős alufelnikkel. Hivatalos Ford márkakereskedésből, „Ford Approved” tanúsítvánnyal, világos bemutatótermi padlóval a háttérben. Első tulajdonostól, teljes szervizkönyvvel." },
+    { id: 18, market: "hu", brand: "jaguar", model: "Jaguar XF", img: "jaguar.png", hasPhoto: true, year: 2021, km: 42000, price: 11900000, installment: 122900, fuel: "dizel", transmission: "automatic", body: "sedan", badge: "certified", featured: false,
+      power: "180–250 LE", engineDesc: "2.0D / 2.0T", drivetrain: "Hátsókerék-hajtás", description: "Metálszürke, letisztult vonalvezetésű limuzin, éles LED fényszórókkal és ezüst többküllős alufelnikkel. Sötétített ablakok króm kerettel. Kültéri bemutatófotó a CarnovoX Motor telephelyén, tiszta és karbantartott állapotban." },
 
     { id: 11, market: "uk", brand: "range-rover", model: "Range Rover Sport D350", img: "range-rover.jpeg", hasPhoto: true, year: 2023, km: 14000, price: 54995, installment: 549, fuel: "dizel", transmission: "automatic", body: "suv", badge: "new", featured: true,
       power: "350 hp", engineDesc: "3.0-litre mild-hybrid diesel inline-six", drivetrain: "Permanent all-wheel drive", description: "Third-generation Range Rover Sport styling with minimalist black-and-silver detailing, slimline LED lighting and flush door handles. Available with 3.0-litre mild-hybrid diesel or petrol engines, or as a P440e/P510e plug-in hybrid, spanning 250–510 hp — paired with an 8-speed automatic gearbox and permanent all-wheel drive." },
@@ -636,10 +655,14 @@
       power: "178 hp", engineDesc: "2.0-litre turbocharged petrol", drivetrain: "Front-wheel drive", description: "Iconic go-kart handling in a stylish, efficient hatchback — perfect for spirited city driving." },
     { id: 13, market: "uk", brand: "jaguar", model: "Jaguar XE", img: "jaguar-xe.jpg", year: 2021, km: 38000, price: 16495, installment: 164, fuel: "dizel", transmission: "automatic", body: "sedan", badge: "certified", featured: true,
       power: "163 hp", engineDesc: "2.0-litre diesel", drivetrain: "Rear-wheel drive", description: "Sharp-handling executive saloon with a premium cabin and distinctive British design language." },
-    { id: 14, market: "uk", brand: "ford", model: "Ford Focus", img: "Ford-grey.png", hasPhoto: true, year: 2019, km: 54000, price: 11995, installment: 119, fuel: "benzin", transmission: "manual", body: "hatchback", badge: "sale", featured: false,
+    { id: 14, market: "uk", brand: "ford", model: "Ford Focus", img: "Ford-grey.png", hasPhoto: true, year: 2019, km: 54000, price: 11995, originalPrice: 13000, installment: 119, fuel: "benzin", transmission: "manual", body: "hatchback", badge: "sale", featured: false,
       power: "125 hp", engineDesc: "1.0-litre EcoBoost petrol", drivetrain: "Front-wheel drive", description: "Metallic grey hatchback with multi-spoke alloy wheels, tinted windows, a rear spoiler and rear wiper. Clean, well-maintained showroom example from our CarnovoX Motor dealership floor." },
     { id: 15, market: "uk", brand: "volkswagen", model: "Volkswagen Golf", img: "vw-golf.jpg", year: 2021, km: 29000, price: 15995, installment: 159, fuel: "benzin", transmission: "manual", body: "hatchback", badge: null, featured: false,
-      power: "130 hp", engineDesc: "1.5-litre TSI petrol", drivetrain: "Front-wheel drive", description: "The benchmark hatchback — refined, spacious and packed with technology." }
+      power: "130 hp", engineDesc: "1.5-litre TSI petrol", drivetrain: "Front-wheel drive", description: "The benchmark hatchback — refined, spacious and packed with technology." },
+    { id: 19, market: "uk", brand: "jaguar", model: "Jaguar XF", img: "jaguar.png", hasPhoto: true, year: 2021, km: 42000, price: 21995, installment: 219, fuel: "dizel", transmission: "automatic", body: "sedan", badge: "certified", featured: false,
+      power: "180–250 hp", engineDesc: "2.0-litre diesel / 2.0-litre petrol", drivetrain: "Rear-wheel drive", description: "Metallic grey executive saloon with sharp LED headlights and silver multi-spoke alloy wheels. Tinted windows with chrome surrounds, photographed outside our CarnovoX Motor showroom. Clean and well-maintained." },
+    { id: 20, market: "uk", brand: "mercedes", model: "Mercedes-Benz C-Class", img: "mercedes.png", hasPhoto: true, year: 2016, km: 68000, price: 10995, installment: 109, fuel: "dizel", transmission: "automatic", body: "sedan", badge: "certified", featured: false,
+      power: "170 hp", engineDesc: "2.1-litre diesel", drivetrain: "Rear-wheel drive", description: "Metallic grey/silver saloon with modern LED headlights and silver 5-spoke alloy wheels. Tinted windows with chrome trim, photographed outdoors on our CarnovoX Motor forecourt with other stock in the background. Clean, well-maintained showroom example." }
   ];
 
   function formatNum(n) {
@@ -649,6 +672,11 @@
   function formatPrice(amount, market) {
     if (market === "uk") return "£" + new Intl.NumberFormat("en-GB").format(amount);
     return new Intl.NumberFormat("hu-HU").format(amount) + " Ft";
+  }
+
+  function priceHtml(car) {
+    if (!car.originalPrice) return formatPrice(car.price, car.market);
+    return `<span class="price-original">${formatPrice(car.originalPrice, car.market)}</span> ${formatPrice(car.price, car.market)}`;
   }
 
   function carCardHtml(car) {
@@ -665,7 +693,7 @@
         <div class="car-card-body">
           <div class="car-card-top">
             <div><h3>${car.model}</h3><span class="car-year">${car.year} · ${formatNum(car.km)} km</span></div>
-            <div class="car-price">${formatPrice(car.price, car.market)}<small>${t("installment_template").replace("{n}", formatPrice(car.installment, car.market))}</small></div>
+            <div class="car-price">${priceHtml(car)}<small>${t("installment_template").replace("{n}", formatPrice(car.installment, car.market))}</small></div>
           </div>
           <div class="car-specs">
             <div class="car-spec">${ICON_GEAR}${t("spec_" + car.transmission)}</div>
@@ -713,7 +741,7 @@
     bodyEl.innerHTML = `
       <h3>${car.model}</h3>
       <span class="car-year">${car.year} · ${formatNum(car.km)} km</span>
-      <div class="car-modal-price">${formatPrice(car.price, car.market)}<small>${t("installment_template").replace("{n}", formatPrice(car.installment, car.market))}</small></div>
+      <div class="car-modal-price">${priceHtml(car)}<small>${t("installment_template").replace("{n}", formatPrice(car.installment, car.market))}</small></div>
       <div class="car-modal-specs">
         <div class="car-modal-spec"><span>${t("label_engine")}</span><strong>${car.engineDesc}</strong></div>
         <div class="car-modal-spec"><span>${t("label_power")}</span><strong>${car.power}</strong></div>
@@ -754,6 +782,7 @@
       .sort((a, b) => (b.hasPhoto ? 1 : 0) - (a.hasPhoto ? 1 : 0))
       .map(carCardHtml)
       .join("");
+    observeReveal();
   }
 
   /* ---------------- Market-aware brand / price selects & footer links ---------------- */
@@ -793,6 +822,7 @@
     renderPriceOptions(document.getElementById("fPrice"));
     renderFooterBrands();
     renderFeatured();
+    renderTeam();
     if (carsPageRender) carsPageRender();
   }
 
@@ -858,6 +888,7 @@
       const filtered = getFiltered();
       const visible = filtered.slice(0, visibleCount);
       grid.innerHTML = visible.map(carCardHtml).join("");
+      observeReveal();
       els.resultsCount.textContent = filtered.length;
       els.emptyState.classList.toggle("visible", filtered.length === 0);
       els.loadMore.style.display = visibleCount >= filtered.length ? "none" : "inline-flex";
@@ -918,21 +949,30 @@
   }
 
   /* ---------------- Reveal on scroll ---------------- */
+  let revealObserver = null;
   function initReveal() {
-    const items = document.querySelectorAll(".reveal");
-    if (!("IntersectionObserver" in window) || items.length === 0) {
+    if ("IntersectionObserver" in window) {
+      revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+    }
+    observeReveal();
+  }
+
+  // Content re-rendered later (e.g. after a store switch) creates fresh .reveal
+  // nodes that the initial observer never saw — (re-)observe just those.
+  function observeReveal() {
+    const items = document.querySelectorAll(".reveal:not(.in-view)");
+    if (!revealObserver) {
       items.forEach((el) => el.classList.add("in-view"));
       return;
     }
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    items.forEach((el) => observer.observe(el));
+    items.forEach((el) => revealObserver.observe(el));
   }
 
   /* ---------------- Back to top ---------------- */
@@ -978,6 +1018,7 @@
     renderBrandOptions(document.getElementById("qMarka"));
     renderPriceOptions(document.getElementById("qAr"));
     renderFooterBrands();
+    renderTeam();
     applyStoreData();
     applyTranslations();
     initReveal();
